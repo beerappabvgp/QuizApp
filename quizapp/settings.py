@@ -125,3 +125,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'quiz.CustomUser'
 LOGIN_REDIRECT_URL = 'quiz:dashboard'
+LOGOUT_REDIRECT_URL = 'quiz:login'

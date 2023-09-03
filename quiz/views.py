@@ -44,3 +44,5 @@ def dashboard(request):
         'user' : user
     }
     return render(request,'quiz/dashboard.html',context)
+
+
