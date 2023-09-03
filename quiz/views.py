@@ -31,8 +31,16 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('quiz:home')
+            return redirect('quiz:dashboard')
         else:
             messages.error(request,'Invalid username or password . Please try again .')
 
     return render(request,'quiz/login.html')
+
+
+def dashboard(request):
+    user = request.user
+    context = {
+        'user' : user
+    }
+    return render(request,'quiz/dashboard.html',context)
