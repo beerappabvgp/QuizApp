@@ -10,5 +10,10 @@ class CustomUsercreationForm(UserCreationForm):
         model = CustomUser
         fields = ['username' , 'email' , 'password1' , 'password2' , 'is_creator']
 
+class PasswordResetForm(forms.Form):
+    email = forms.EmailField(
+        label='Email',
+        widget=forms.EmailInput(attrs={'placeholder' : 'Enter your email'})
+    )
 
 

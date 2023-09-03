@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import CustomUsercreationForm
 from django.contrib.auth import login,authenticate
 from django.contrib import messages
+from django.contrib.auth.views import PasswordResetView
 
 
 def home(request):
@@ -46,3 +47,7 @@ def dashboard(request):
     return render(request,'quiz/dashboard.html',context)
 
 
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'quiz/password_reset_form.html'
+    email_template_name = 'quiz/password_reset_email.html'
+    success_url = '/login/'

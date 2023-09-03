@@ -126,3 +126,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'quiz.CustomUser'
 LOGIN_REDIRECT_URL = 'quiz:dashboard'
 LOGOUT_REDIRECT_URL = 'quiz:login'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'  # Mailgun SMTP server
+EMAIL_PORT = 587  # Use the appropriate port
+EMAIL_USE_TLS = True  # Enable TLS
+
+# Your Mailgun API credentials
+EMAIL_HOST_USER = 'postmaster@sandbox4c462be5803a460cb9773b941e5c9ed4.mailgun.org'
+EMAIL_HOST_PASSWORD = 'smtps'
+
+# Default "From" address for emails
+DEFAULT_FROM_EMAIL = 'beerappabharathb@gmail.com'
