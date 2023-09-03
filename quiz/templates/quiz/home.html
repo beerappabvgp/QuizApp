@@ -5,5 +5,16 @@
 {% endblock title %}
 
 {% block content %}
+
+
+{% if messages %}
+<div class="bg-indigo-500 px-4 py-4 rounded-xl">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
     <h1>Home</h1>
+
+
 {% endblock content %}  <h1>Home</h1>

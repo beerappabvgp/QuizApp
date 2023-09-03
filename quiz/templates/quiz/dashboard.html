@@ -7,11 +7,24 @@
 {% block content %}
 
 
-<a href="{% url 'quiz:logout' %}" class="ml-4 mb-6 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring focus:ring-red-300">
+<div class="text-xl font-bold mb-5 text-center">SignIn</div>
+{% if messages %}
+<div class="bg-indigo-500 px-4 py-4 rounded-xl mb-10">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+<h1 class="mb-6 ml-4">Welcome {{ user.username }}</h1>
+
+
+<a href="{% url 'quiz:logout' %}" class="mt-10 ml-4 mb-6 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring focus:ring-red-300">
 Logout
 </a>
 
-    <h1 class="mt-6 ml-4">Welcome {{ user.username }}</h1>
+    
 
 
 

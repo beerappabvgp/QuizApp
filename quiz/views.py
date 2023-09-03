@@ -15,7 +15,6 @@ def register(request):
             print(user)
             login(request,user)
             messages.success(request,"User Created Successfully")
-            print("logged")
             return redirect('quiz:home')
     else:
         form = CustomUsercreationForm()
@@ -31,6 +30,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
+            messages.success(request,"Logged In Successfully")
             return redirect('quiz:dashboard')
         else:
             messages.error(request,'Invalid username or password . Please try again .')
